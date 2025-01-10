@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 12:59:12 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/07 13:26:40 by evrodrig         ###   ########.fr       */
+/*   Created: 2025/01/07 14:31:49 by evrodrig          #+#    #+#             */
+/*   Updated: 2025/01/07 14:44:24 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
 #include <string.h>
+#include "libft.h"
+#include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+void	*ft_memchr(const void *arr, int c, size_t n)
 {
-	size_t	length;
+	unsigned char	*str;
+	unsigned char	ch;
+	size_t			i;
 
-	length = 0;
-	while (str[length] != '\0')
+	i = 0;
+	str = (unsigned char *)arr;
+	ch = (unsigned char)c;
+	while (i < n)
 	{
-		length++;
+		if (str[i] == ch)
+			return (str + i);
+		i++;
 	}
-	return (length);
+	return (NULL);
 }
 /*
 int	main(void)
 {
-	const char	*str1;
-	const char	*str2;
+	char	arr[] = "Genial Idea";
+	char	*result;
 
-	str1 = "Always happy";
-	str2 = "I Love people";
-	printf("Lenght of str1: %zu\n", ft_strlen(str1));
-	printf("Lenght of str2: %zu\n", ft_strlen(str2));
+	result = ft_memchr(arr, 's', 11);
+	if (result)
+		printf("Encontrado: %c\n", *result);
+	else
+		printf("No encontrado\n");
+
 	return (0);
 }
 */

@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 12:59:12 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/07 13:26:40 by evrodrig         ###   ########.fr       */
+/*   Created: 2025/01/07 11:59:12 by evrodrig          #+#    #+#             */
+/*   Updated: 2025/01/10 12:21:21 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *str)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	length;
+	size_t	i;
 
-	length = 0;
-	while (str[length] != '\0')
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
 	{
-		length++;
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
 	}
-	return (length);
+	return (dst);
 }
 /*
 int	main(void)
 {
-	const char	*str1;
-	const char	*str2;
+	char		dest[5];
+	const char	src[50] = "lavidaloca";
+	size_t		n;
+	char		*ret;
 
-	str1 = "Always happy";
-	str2 = "I Love people";
-	printf("Lenght of str1: %zu\n", ft_strlen(str1));
-	printf("Lenght of str2: %zu\n", ft_strlen(str2));
+	n = 7;
+	ret = (char *)ft_memcpy(dest, src, n);
+	printf("Destination: \"%s\"\n", ret);
 	return (0);
 }
 */

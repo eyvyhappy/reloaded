@@ -6,7 +6,7 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:49:06 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/05 10:55:28 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/07 10:31:33 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[count] = '\0';
 	return (ft_strlen(src));
 }
-
+/*
 int	main(void)
 {
 	char	src[] = "Estoy feliz";
@@ -44,3 +44,4 @@ int	main(void)
 	printf("Longitud de la cadena fuente: %zu\n", len);
 	return (0);
 }
+*/

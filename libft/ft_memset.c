@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 12:59:12 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/07 13:26:40 by evrodrig         ###   ########.fr       */
+/*   Created: 2025/01/05 14:05:21 by evrodrig          #+#    #+#             */
+/*   Updated: 2025/01/07 10:34:33 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
 #include <string.h>
+#include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+void	*ft_memset(void *s, int c, size_t len)
 {
-	size_t	length;
+	unsigned char	*ptr;
 
-	length = 0;
-	while (str[length] != '\0')
+	ptr = s;
+	while (len--)
 	{
-		length++;
+		*ptr = (unsigned char)c;
+		ptr++;
 	}
-	return (length);
+	return (s);
 }
 /*
 int	main(void)
 {
-	const char	*str1;
-	const char	*str2;
+	char	arr[5];
+	size_t	len;
+	int		c;
+	size_t	i;
 
-	str1 = "Always happy";
-	str2 = "I Love people";
-	printf("Lenght of str1: %zu\n", ft_strlen(str1));
-	printf("Lenght of str2: %zu\n", ft_strlen(str2));
+	len = 5;
+	c = 65;
+	ft_memset(arr, c, len);
+	i = 0;
+	while (i < len)
+	{
+		printf("%c", arr[i]);
+		i++;
+	}
+	printf("\n");
 	return (0);
 }
 */
