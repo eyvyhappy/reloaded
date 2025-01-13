@@ -6,7 +6,7 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:04:48 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/09 14:36:43 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/13 19:05:53 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(void)
         printf("Test 5: Error en la concatenación\n");
     }
 
-    result = ft_strjoin("A very long string with spaces and punctuation", " and another long one!");
+    result = ft_strjoin("A very long string ", " and another long one!");
     if (result) {
         printf("Test 6: %s\n", result);
         free(result);

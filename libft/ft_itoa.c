@@ -6,7 +6,7 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 16:27:04 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/11 18:04:48 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/11 18:11:36 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_itoa(int n)
 	int		is_negative;
 
 	len = 1;
+	is_negative = 0;
 	if (is_negative)
 	{
 		n = -n;
