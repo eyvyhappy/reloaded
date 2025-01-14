@@ -6,7 +6,7 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 10:35:31 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/04 11:45:23 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:02:36 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ char	*ft_strrchr(const char *s, int c)
 
 	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == (unsigned char)c)
 		{
 			last = s;
 		}
 		s++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 	{
 		return ((char *)(s));
 	}

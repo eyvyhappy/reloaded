@@ -6,7 +6,7 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:04:16 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/13 18:25:10 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:17:58 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_putstr_fd(char *s, int fd)
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!s)
+	if (s == NULL || fd < 0)
 		return ;
 	if (fd < 0)
 		return ;
@@ -50,7 +50,7 @@ int	main(void)
     int fd = open("output_test.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (fd == -1)
     {
-        write(2, "Error al abrir el archivo.\n", 26);  // Si ocurre un error al abrir el archivo
+        write(2, "Error al abrir el archivo.\n", 26); 
         return 1;
     }
     ft_putendl_fd("Prueba 3: Esto debería estar en un archivo.", fd);

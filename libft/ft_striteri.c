@@ -6,7 +6,7 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:57:09 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/13 17:49:12 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/14 09:06:30 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-static void	putstr(unsigned int i, char *s)
+/*
+static void	ft_putstr_fd(unsigned int i, char *s)
 {
 	if (s)
 	{
@@ -40,7 +40,6 @@ static void	putstr(unsigned int i, char *s)
 		write(1, s, 1);
 	}
 }
-/*
 int	main(void)
 {
 	char	str[] = "hello";

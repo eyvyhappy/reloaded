@@ -6,7 +6,7 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:51:34 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/13 18:00:48 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/14 08:41:14 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
     // Prueba 1: Imprimir en la salida estándar (fd = 1)
@@ -56,3 +56,4 @@ int	main(void)
 
     return (0);
 }
+*/

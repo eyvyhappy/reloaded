@@ -6,7 +6,7 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 08:49:29 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/04 14:33:01 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/14 11:20:10 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	unsigned char	target;
 
-	i = 0;
-	while (s[i] != '\0' && s[i] != c)
+	target = (unsigned char)c;
+	while (*s)
 	{
-		i++;
+		if ((unsigned char)*s == target)
+			return ((char *)s);
+		s++;
 	}
-	if (s[i] == c)
-		return ((char *)&s[i]);
+	if (target == '\0')
+		return ((char *)s);
 	return (NULL);
 }
 /*
@@ -37,7 +39,7 @@ int	main(void)
 	result	= ft_strchr(str, 'e');
 	if (result != NULL)
 	{
-		printf("Caracter '%s' en la posicion: %td\n", result, result - str);
+		printf("Caracter '%c' en la posicion: %td\n", *result, result - str);
 	}
 	else
 	{

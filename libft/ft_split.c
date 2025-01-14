@@ -6,7 +6,7 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:27:48 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/13 19:34:01 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/14 13:05:50 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,122 +14,112 @@
 #include <stdio.h>
 #include "libft.h"
 
-static int	word_len(const char *s, char c)
+static size_t	ft_numstring(const char *s, char c)
 {
-	int	len;
+	size_t	count;
+	size_t	flag;
 
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
+	count = 0;
+	flag = 0;
+	if (!s)
+		return (0);
+	while (*s != '\0')
+	{
+		if (*s == c)
+			flag = 0;
+		else if (flag == 0)
+		{
+			flag = 1;
+			count++;
+		}
+		s++;
+	}
+	return (count);
 }
 
-static char	*create_word(const char *s, int len)
+static size_t	ft_numchar(const char *s, char c)
 {
-	char    *word;
-	int             i;
+	size_t	count;
 
-	word = malloc(len + 1);
-	if (!word)
+	count = 0;
+	while (s[count] != c && s[count] != '\0')
+		count++;
+	return (count);
+}
+
+static char	**ft_free_matrix(char **matrix, size_t len_matrix)
+{
+	while (len_matrix--)
+		free(matrix[len_matrix]);
+	free(matrix);
+	return (NULL);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**matrix;
+	size_t	num_strings;
+	size_t	i;
+	size_t	word_len;
+
+	num_strings = ft_numstring(s, c);
+	matrix = (char **)malloc(sizeof(char *) * (num_strings + 1));
+	if (!matrix)
 		return (NULL);
 	i = 0;
-	while (i < len)
-		word[i++] = *s++;
-	word[i] = 0;
-	return (word);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**res;
-        int		i;
-        int		j;
-
-	res = malloc(sizeof(char *) * 1024);
-	if (!s || !(res))
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-		if (s[i] == c)
-			i++;
-                else
-                {
-                        res[j] = create_word(s + i, word_len(s + i, c));
-                        if (!(res[j]))
-                                return (free(res), NULL);
-			else
-			{
-                                i += word_len(s + i, c);
-                                j++;
-                        }
-                }
-        return (res[j] = NULL, res);
-}
-
-static void print_split_result(char **split)
-{
-        int i;
-
-        if (!split)
-        {
-                printf("NULL result\n");
-                return;
-        }
-        i = 0;
-        while (split[i])
-        {
-                printf("[%s]\n", split[i]);
-                i++;
-        }
-}
-
-
-
-static void free_result(char **split)
-{
-        int i;
-
-        if (!split)
-                return;
-        i = 0;
-        while (split[i])
-        {
-                free(split[i]);
-                i++;
-        }
-        free_result(split);
+	while (i < num_strings)
+	{
+		while (*s == c)
+			s++;
+		word_len = ft_numchar(s, c);
+		matrix[i] = (char *)malloc(sizeof(char) * (word_len + 1));
+		if (!matrix[i])
+			return (ft_free_matrix(matrix, i));
+		ft_strlcpy(matrix[i], s, word_len + 1);
+		s += word_len;
+		i++;
+	}
+	matrix[i] = NULL;
+	return (matrix);
 }
 /*
-int main(void)
+void print_split_result(char **result)
 {
-        char **result;
+    if (result)
+    {
+        int i = 0;
+        while (result[i] != NULL)
+        {
+            printf("Word %d: %s\n", i + 1, result[i]);
+            i++;
+        }
+    }
+    else
+    {
+        printf("Error: Memory allocation failed.\n");
+    }
+}
 
-        printf("Test 1: Normal string with spaces\n");
-        result = ft_split("Hello World Test", ' ');
-        print_split_result(result);
-        free_result(result);
+int main()
+{
+    const char *str = "This is a test string for ft_split!";
+    char delimiter = ' ';
+    char **result = ft_split(str, delimiter);
 
-        printf("\nTest 2: String with multiple delimiters\n");
-        result = ft_split("...hello...world...", '.');
-        print_split_result(result);
-        free_result(result);
+    print_split_result(result);
 
-        printf("\nTest 3: Empty string\n");
-        result = ft_split("", ' ');
-        print_split_result(result);
-        free_result(result);
+    // Liberar memoria
+    if (result)
+    {
+        int i = 0;
+        while (result[i] != NULL)
+        {
+            free(result[i]);
+            i++;
+        }
+        free(result);
+    }
 
-        printf("\nTest 4: String with no delimiter\n");
-        result = ft_split("HelloWorld", ' ');
-        print_split_result(result);
-        free_result(result);
-
-        printf("\nTest 5: NULL input\n");
-        result = ft_split(NULL, ' ');
-        print_split_result(result);
-        free_result(result);
-
-        return (0);
+    return 0;
 }
 */
