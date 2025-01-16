@@ -6,11 +6,10 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:30:52 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/10 13:03:22 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:37:32 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 #include <stdio.h>
 

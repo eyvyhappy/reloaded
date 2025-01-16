@@ -6,13 +6,12 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:04:16 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/14 13:17:58 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:29:32 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <fcntl.h>
-#include <stddef.h>
+#include <unistd.h>
 
 static void	ft_putstr_fd(char *s, int fd)
 {

@@ -6,14 +6,13 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 11:52:04 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/10 12:08:27 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:13:37 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -25,10 +24,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	start = 0;
-	while (s1[start] && strchr(set, s1[start]))
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && strchr(set, s1[end - 1]))
+	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
 	trimmed = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (trimmed == NULL)

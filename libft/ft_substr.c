@@ -6,14 +6,13 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 10:47:38 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/09 12:55:07 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/16 08:24:21 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -23,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	str_len = strlen(s);
+	str_len = ft_strlen(s);
 	if (start >= str_len)
 		len = 0;
 	else if (start + len > str_len)

@@ -6,18 +6,12 @@
 /*   By: evrodrig <evrodrig@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:51:34 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/14 08:41:14 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:45:37 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
 #include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 void	ft_putstr_fd(char *s, int fd)
 {

@@ -6,13 +6,11 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:04:48 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/13 19:05:53 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:42:04 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)

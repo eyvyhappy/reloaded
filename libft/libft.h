@@ -6,12 +6,16 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 13:31:14 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/04 14:56:55 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 13:03:06 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
 # include <stddef.h>
 
 int			ft_isalpha(int c);

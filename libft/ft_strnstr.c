@@ -6,13 +6,12 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:05:53 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/07 13:25:38 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:27:43 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
-#include <stddef.h>
 #include <string.h>
 
 char	*ft_strnstr(const char *str, const char *find, size_t len)

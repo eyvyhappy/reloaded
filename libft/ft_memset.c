@@ -6,11 +6,10 @@
 /*   By: evrodrig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:05:21 by evrodrig          #+#    #+#             */
-/*   Updated: 2025/01/07 10:34:33 by evrodrig         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:36:23 by evrodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
 
 void	*ft_memset(void *s, int c, size_t len)
